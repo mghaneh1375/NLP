@@ -41,7 +41,7 @@
   {
     "key": "what",
     "tags": ["what"],
-    "translates": ["چی"]
+    "translates": ["چی", "چیه"]
   },
   {
     "key": "where",
@@ -84,6 +84,11 @@
     "translates": ["کالری", "انرژی"]
   },
   {
+    "key": "material",
+    "tags": ["material"],
+    "translates": ["مواداولیه", "موادلازم"]
+  },
+  {
     "key": "food-adjective",
     "tags": ["food-adjective"],
     "translates": ["محلی", "سنتی"]
@@ -111,7 +116,7 @@
   {
     "key": "for",
     "tags": ["punc"],
-    "translates": ["برای"]
+    "translates": ["برای", "منظور"]
   },
   {
     "key": "city_or_state_name",
@@ -121,7 +126,12 @@
   {
     "key": "food_name",
     "tags": ["food_name"],
-    "translates": ["%FOOD_NAME%"]
+    "translates": ["%FOOD__NAME%"]
+  },
+  {
+    "key": "drink_name",
+    "tags": ["drink_name"],
+    "translates": ["%DRINK__GOOD_FOR%"]
   },
   {
     "key": "how-many-spec",

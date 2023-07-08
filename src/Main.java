@@ -39,10 +39,14 @@ public class Main {
         Utility.initVerbs();
         Utility.initQuestions();
 
+        String question = "مواد اولیه حلیم گوشت چیه؟";
+//        String question = "برای سرفه چه بنوشم؟";
 //        String question = "طرز تهیه آش شیله عدس را بیان کنید";
 //        String question = "آش شیله عدس چطور درست میشه؟";
-        String question = "آش شیله عدس چقدر کالری دارد؟";
+//        String question = "آش شیله عدس چقدر کالری دارد؟";
 //        String question = "نوشیدنی پیشنهاد بده";
+//        String question = "نوشیدنی سرد پیشنهاد بده";
+//        String question = "نوشیدنی داغ پیشنهاد بده";
 //        String question = "در اصفهان چی بخوریم";
 //        String question = "در شهر اصفهان چی بخوریم";
 //        String question = "در اصفهان کجا بریم";

@@ -93,7 +93,9 @@ public class Utility {
         str = str.replace("طرز پخت", "طرزپخت")
                 .replace("نحوه تهیه", "نحوهتیه")
                 .replace("طرز تهیه", "طرزتهیه")
-                .replace("دستور پخت", "دستورپخت");
+                .replace("دستور پخت", "دستورپخت")
+                .replace("مواد اولیه", "مواداولیه")
+                .replace("مواد لازم", "موادلازم");
 
         String[] splitedTmp = str.split("\\s+");
 
@@ -151,7 +153,7 @@ public class Utility {
                         translates.get(0).toString().endsWith("%")
                 ) {
 
-                    String[] splited = translates.get(0).toString().replace("%", "").split("_");
+                    String[] splited = translates.get(0).toString().replace("%", "").split("__");
 
                     List<Document> docs = Main.placeRepository.find(eq("place_mode", splited[0].toLowerCase(Locale.ROOT)), new BasicDBObject(splited[1].toLowerCase(Locale.ROOT), 1));
                     for(Document doc : docs) {

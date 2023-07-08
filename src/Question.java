@@ -111,9 +111,15 @@ public class Question {
         while (idx < subList.size()) {
 
             String wanted = String.join(" ", subList.subList(0, idx));
-            int index = list.indexOf(wanted);
-            if(index != -1)
-                return wanted;
+
+
+            for(String str : list) {
+
+                if(str.contains(wanted)) {
+                    System.out.println("HEYYYYY " + str + " " + wanted);
+                    return wanted;
+                }
+            }
 
             idx++;
         }
@@ -144,6 +150,7 @@ public class Question {
 
             for (Word word : Main.words) {
 
+
                 if (word.translates.contains(itr)) {
 
                     key = word.key;
@@ -153,7 +160,7 @@ public class Question {
                     break;
                 }
 
-                if(word.key.equals("food_name")) {
+                if(word.key.equals("food_name") || word.key.equals("drink_name")) {
 
                     String tmp = findWithSpace(word.translates, in.subList(idx, Math.min(idx + 4, in.size())));
                     if(tmp != null) {
@@ -205,6 +212,7 @@ public class Question {
         String specLoc = null;
         String loc = null;
         String name = null;
+        Boolean isHot = null;
 
         int idx = 0;
 
@@ -216,6 +224,18 @@ public class Question {
                 specLoc = secondaryList.get(idx);
             else if(key.equalsIgnoreCase("food_name"))
                 name = secondaryList.get(idx);
+            else if(key.equalsIgnoreCase("drink-adjective")) {
+                System.out.println(secondaryList.get(idx));
+                if(secondaryList.get(idx).equalsIgnoreCase("سرد") ||
+                        secondaryList.get(idx).equalsIgnoreCase("خنک") ||
+                        secondaryList.get(idx).equalsIgnoreCase("تگری")
+                )
+                    isHot = false;
+                else if(secondaryList.get(idx).equalsIgnoreCase("گرم") ||
+                        secondaryList.get(idx).equalsIgnoreCase("داغ")
+                )
+                    isHot = true;
+            }
 
             idx++;
         }
@@ -234,6 +254,9 @@ public class Question {
 
         if(name != null)
             filters.add(eq("name", name));
+
+        if(isHot != null)
+            filters.add(eq("features.is_hot", isHot));
 
         List<Document> places = db.find(and(filters), projection == null ?
                 new BasicDBObject("name", 1).append("state", 1)

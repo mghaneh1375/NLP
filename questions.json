@@ -27,6 +27,9 @@
         "what", "drink"
       ],
       [
+        "for", "drink_name", "what", "drink"
+      ],
+      [
         "drink", "drink-adjective?", "suggest"
       ]
     ],
@@ -57,6 +60,24 @@
     ],
     "projections": [
       "recipes"
+    ]
+  },
+  {
+    "name": "foodMaterialQ",
+    "tags": [
+      [
+        "material", "for?", "food_name", "what"
+      ]
+    ],
+    "repository": "place",
+    "filters": [
+      {
+        "key": "place_mode",
+        "value": "food"
+      }
+    ],
+    "projections": [
+      "features.materials"
     ]
   },
   {
