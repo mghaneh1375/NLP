@@ -5,6 +5,40 @@
     "translates": ["در", "توی", "تو", "داخل"]
   },
   {
+    "key": "loc-spec",
+    "tags": ["loc-spec"],
+    "translates": ["استان", "شهر", "بخش", "روستا"]
+  },
+  {
+    "key": "suggest",
+    "tags": ["suggest"],
+    "translates": ["نامببر", "معرفیکن", "اسمببر", "پیشنهادده", "پیشنهادبده",
+      "بگو", "بربشمار", "بشمار", "لیستکن", "کجاست", "کجاس", "چی بخوریم", "چی بخورم",
+      "بیانکن"
+    ]
+  },
+  {
+    "key": "attraction",
+    "tags": ["attraction"],
+    "translates": [
+      "جا", "مکان", "جاذبه", "دیدنی", "اماکن"
+    ]
+  },
+  {
+    "key": "hotel",
+    "tags": ["hotel"],
+    "translates": [
+      "هتل", "متل", "اقامتگاه", "مهمانسرا"
+    ]
+  },
+  {
+    "key": "attraction-adjective",
+    "tags": ["adj"],
+    "translates": [
+      "دیدنی"
+    ]
+  },
+  {
     "key": "what",
     "tags": ["what"],
     "translates": ["چی"]
@@ -20,9 +54,49 @@
     "translates": ["چطور", "چگونه"]
   },
   {
+    "key": "how-much",
+    "tags": ["how-much"],
+    "translates": ["میزان", "چقدر"]
+  },
+  {
+    "key": "make",
+    "tags": ["make"],
+    "translates": ["درستمیشه"]
+  },
+  {
     "key": "eat",
     "tags": ["eat-drink"],
-    "translates": ["بخوریم", "بخورم", "میخوری", "می خوری", "خوردن"]
+    "translates": ["خور", "خوردن"]
+  },
+  {
+    "key": "food",
+    "tags": ["food"],
+    "translates": ["غذا", "خوردنی", "غذامحلی", "غذاسنتی"]
+  },
+  {
+    "key": "how-make-food",
+    "tags": ["how-make-food"],
+    "translates": ["دستورپخت", "طرزپخت", "نحوهتهیه", "طرزتهیه"]
+  },
+  {
+    "key": "calories",
+    "tags": ["calories"],
+    "translates": ["کالری", "انرژی"]
+  },
+  {
+    "key": "food-adjective",
+    "tags": ["food-adjective"],
+    "translates": ["محلی", "سنتی"]
+  },
+  {
+    "key": "drink",
+    "tags": ["drink"],
+    "translates": ["نوشیدنی", "نوش"]
+  },
+  {
+    "key": "drink-adjective",
+    "tags": ["drink-adjective"],
+    "translates": ["خنک", "سرد", "گرم"]
   },
   {
     "key": "go",
@@ -30,13 +104,28 @@
     "translates": ["برویم", "بریم", "برم", "میری", "می ری"]
   },
   {
+    "key": "stay",
+    "tags": ["stay"],
+    "translates": ["بمونیم", "بخوابیم", "می خوابی", "بخوابم", "اقامتباشیم", "بمانیم"]
+  },
+  {
     "key": "for",
     "tags": ["punc"],
     "translates": ["برای"]
   },
   {
-    "key": "place_name",
+    "key": "city_or_state_name",
     "tags": ["state"],
     "translates": ["اصفهان", "یزد", "تهران"]
+  },
+  {
+    "key": "food_name",
+    "tags": ["food_name"],
+    "translates": ["%FOOD_NAME%"]
+  },
+  {
+    "key": "how-many-spec",
+    "tags": ["how-many-spec"],
+    "translates": ["", "یزد", "تهران"]
   }
 ]

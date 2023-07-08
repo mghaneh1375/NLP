@@ -1,22 +1,122 @@
 [
   {
+    "name": "foodQ",
     "tags": [
       [
-        "in", "place_name", "what", "eat"
+        "loc-spec?", "city_or_state_name", "what", "eat"
       ],
       [
-        "what", "eat", "in", "place_name"
+        "what", "eat", "loc-spec?", "city_or_state_name"
+      ],
+      [
+        "food", "food-adjective?", "loc-spec?", "city_or_state_name", "suggest"
       ]
+    ],
+    "repository": "place",
+    "filters": [
+      {
+        "key": "place_mode",
+        "value": "food"
+      }
     ]
   },
   {
+    "name": "drinkQ",
     "tags": [
       [
-        "in", "place_name", "where", "go"
+        "what", "drink"
       ],
       [
-        "go", "where", "in", "place_name"
+        "drink", "drink-adjective?", "suggest"
       ]
+    ],
+    "repository": "place",
+    "filters": [
+      {
+        "key": "place_mode",
+        "value": "drink"
+      }
+    ]
+  },
+  {
+    "name": "foodMakeQ",
+    "tags": [
+      [
+        "how-make-food", "food_name", "suggest"
+      ],
+      [
+        "food_name", "how", "make"
+      ]
+    ],
+    "repository": "place",
+    "filters": [
+      {
+        "key": "place_mode",
+        "value": "food"
+      }
+    ],
+    "projections": [
+      "recipes"
+    ]
+  },
+  {
+    "name": "foodSpecQ",
+    "tags": [
+      [
+        "food_name", "how-much", "calories"
+      ]
+    ],
+    "repository": "place",
+    "filters": [
+      {
+        "key": "place_mode",
+        "value": "food"
+      }
+    ],
+    "projections": [
+      "features.energy"
+    ]
+  },
+  {
+    "name": "attractionQ",
+    "tags": [
+      [
+        "loc-spec?", "city_or_state_name", "where", "go"
+      ],
+      [
+        "go", "where", "loc-spec?", "city_or_state_name"
+      ],
+      [
+        "attraction", "attraction-adjective?", "loc-spec?", "city_or_state_name", "suggest"
+      ]
+    ],
+    "repository": "place",
+    "filters": [
+      {
+        "key": "place_mode",
+        "value": "attraction"
+      }
+    ]
+  },
+  {
+    "name": "hotelQ",
+    "tags": [
+      [
+        "loc-spec?", "city_or_state_name", "where", "stay"
+      ],
+      [
+        "stay", "where", "loc-spec?", "city_or_state_name"
+      ],
+      [
+        "hotel", "loc-spec?", "city_or_state_name", "suggest"
+      ]
+    ],
+    "repository": "place",
+    "filters": [
+      {
+        "key": "place_mode",
+        "value": "hotel"
+      }
     ]
   }
 ]

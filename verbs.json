@@ -1,0 +1,47 @@
+[
+  {
+    "verb": "ببرید",
+    "needRemoveLast": true,
+    "infinitive": false
+  },
+  {
+    "verb": "کنید",
+    "needRemoveLast": true,
+    "infinitive": false
+  },
+  {
+    "verb": "ببرید",
+    "needRemoveLast": true,
+    "infinitive": false
+  },
+  {
+    "verb": "باشید",
+    "needRemoveLast": true,
+    "infinitive": false
+  },
+  {
+    "verb": "بگویید",
+    "needRemoveLast": true,
+    "infinitive": false
+  },
+  {
+    "verb": "بشمارید",
+    "needRemoveLast": true,
+    "infinitive": false
+  },
+  {
+    "verb": "دهید",
+    "needRemoveLast": true,
+    "infinitive": false
+  },
+  {
+    "verb": "نوش",
+    "needRemoveLast": false,
+    "infinitive": true
+  },
+  {
+    "verb": "خور",
+    "needRemoveLast": false,
+    "infinitive": true
+  }
+]
