@@ -1,0 +1,22 @@
+[
+  {
+    "tags": [
+      [
+        "in", "place_name", "what", "eat"
+      ],
+      [
+        "what", "eat", "in", "place_name"
+      ]
+    ]
+  },
+  {
+    "tags": [
+      [
+        "in", "place_name", "where", "go"
+      ],
+      [
+        "go", "where", "in", "place_name"
+      ]
+    ]
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "key": "in",
+    "tags": ["loc"],
+    "translates": ["در", "توی", "تو", "داخل"]
+  },
+  {
+    "key": "what",
+    "tags": ["what"],
+    "translates": ["چی"]
+  },
+  {
+    "key": "where",
+    "tags": ["where"],
+    "translates": ["کجا"]
+  },
+  {
+    "key": "how",
+    "tags": ["how"],
+    "translates": ["چطور", "چگونه"]
+  },
+  {
+    "key": "eat",
+    "tags": ["eat-drink"],
+    "translates": ["بخوریم", "بخورم", "میخوری", "می خوری", "خوردن"]
+  },
+  {
+    "key": "go",
+    "tags": ["go"],
+    "translates": ["برویم", "بریم", "برم", "میری", "می ری"]
+  },
+  {
+    "key": "for",
+    "tags": ["punc"],
+    "translates": ["برای"]
+  },
+  {
+    "key": "place_name",
+    "tags": ["state"],
+    "translates": ["اصفهان", "یزد", "تهران"]
+  }
+]
