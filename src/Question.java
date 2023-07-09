@@ -5,6 +5,7 @@ import org.bson.conversions.Bson;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import static com.mongodb.client.model.Filters.*;
 
@@ -104,24 +105,67 @@ public class Question {
         return Math.min(matches * 1.0 / tagsSize, 1.0);
     }
 
-    private String findWithSpace(List<String> list, List<String> subList) {
+    private boolean findSubSeq(String[] list, List<String> wanted) {
 
-        int idx = 0;
+        int currIdx = 0;
+
+        for(String itr : wanted) {
+
+            boolean find = false;
+
+            for(int j = currIdx; j < list.length; j++) {
+
+                if(list[j].equals(itr)) {
+                    currIdx = j + 1;
+                    find = true;
+                    break;
+                }
+
+            }
+
+            if(!find)
+                return false;
+        }
+
+        return true;
+    }
+
+    private String searchSubSeq(String[] translate, List<String> subList) {
+
+        int idx = 1;
+        String res = null;
 
         while (idx < subList.size()) {
 
-            String wanted = String.join(" ", subList.subList(0, idx));
-
-
-            for(String str : list) {
-
-                if(str.contains(wanted)) {
-                    System.out.println("HEYYYYY " + str + " " + wanted);
-                    return wanted;
-                }
+//            System.out.println("testing " + String.join(" ", subList.subList(0, idx)));
+            if(findSubSeq(translate, subList.subList(0, idx))) {
+                res = String.join(" ", subList.subList(0, idx));
+                System.out.println("res is " + res);
+            }
+            else if(res != null) {
+                System.out.println("returning");
+                return res;
             }
 
             idx++;
+        }
+
+        return res;
+    }
+
+    private String findWithSpace(List<String> list, List<String> subList) {
+
+
+//        if(itr.equals("حلیم گوشت عدس"))
+
+        for(String itr : list) {
+
+            String tmp = searchSubSeq(itr.split("\\s+"), subList);
+
+            if (tmp != null) {
+                System.out.println(tmp);
+                return tmp;
+            }
         }
 
         return null;
@@ -163,6 +207,8 @@ public class Question {
                 if(word.key.equals("food_name") || word.key.equals("drink_name")) {
 
                     String tmp = findWithSpace(word.translates, in.subList(idx, Math.min(idx + 4, in.size())));
+                    System.out.println("Tmp is " + tmp);
+
                     if(tmp != null) {
 
                         key = word.key;
@@ -253,7 +299,7 @@ public class Question {
         }
 
         if(name != null)
-            filters.add(eq("name", name));
+            filters.add(regex("name", Pattern.compile(Pattern.quote(name), Pattern.CASE_INSENSITIVE)));
 
         if(isHot != null)
             filters.add(eq("features.is_hot", isHot));

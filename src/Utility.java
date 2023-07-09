@@ -81,6 +81,7 @@ public class Utility {
 
         str = str
                 .replace("?", "")
+                .replace("؟", "")
                 .replace("'", "")
                 .replace("\"", "")
                 .replace("&", "")
@@ -155,9 +156,20 @@ public class Utility {
 
                     String[] splited = translates.get(0).toString().replace("%", "").split("__");
 
-                    List<Document> docs = Main.placeRepository.find(eq("place_mode", splited[0].toLowerCase(Locale.ROOT)), new BasicDBObject(splited[1].toLowerCase(Locale.ROOT), 1));
+                    List<Document> docs = Main.placeRepository.find(
+                            eq("place_mode", splited[0].toLowerCase()),
+                            new BasicDBObject(splited[1].toLowerCase(), 1)
+                    );
+
                     for(Document doc : docs) {
-                        w.addTranslate(doc.getString(splited[1].toLowerCase(Locale.ROOT)));
+
+                        if(doc.get(splited[1].toLowerCase()) instanceof ArrayList) {
+                            for(String itr : doc.getList(splited[1].toLowerCase(), String.class)) {
+                                w.addTranslate(itr);
+                            }
+                        }
+                        else
+                            w.addTranslate(doc.getString(splited[1].toLowerCase()));
                     }
                 }
                 else{
